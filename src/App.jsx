@@ -13,11 +13,13 @@ function App() {
 
   return (
     <AppContext.Provider value ={{user , setUser}}>
+        <BrowserRouter>
       <Routes>
         <Route path = '/' element = {user ==''?<Registration/>:<Navigate to ='/admin'/>}></Route>
         <Route path = '/login' element = {user ==''?<Login/>:<Navigate to ='/admin'/>}></Route>
         <Route path = '/admin' element = {user !==''?<Admin/>:<Navigate to ='/'/>}></Route>
       </Routes>
+      </BrowserRouter>
       </AppContext.Provider>
   )
 }
